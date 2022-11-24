@@ -44,6 +44,10 @@ const Home = () => {
                     title: 'Success add province',
                     icon: 'success',
                 })
+
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1500);
             })
             .catch((err) => {
                 console.log('error : ' + err)

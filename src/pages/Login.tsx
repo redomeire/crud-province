@@ -79,7 +79,10 @@ const Login = () => {
                                 onChange={(e) => setPassword(e.target.value)}
                             />
                         </div>
-                        <Button className="bg-purple-500 text-white mt-5 text-sm md:w-fit w-full">Submit</Button>
+                        <div className="flex items-center mt-5 md:flex-row flex-col">
+                            <Button type="submit" className="bg-purple-500 text-white text-sm md:w-fit w-full">Submit</Button>
+                            <p className="ml-5 md:mt-0 mt-3">Belum punya akun? <span className="font-semibold text-purple-300 cursor-pointer" onClick={() => navigate('/register')}>Register</span></p>
+                        </div>
                     </form>
                 </div>
                 <div className="md:w-[50%] bg-purple-500 md:p-3 p-4 rounded-tr-lg rounded-tl-lg md:rounded-tl-none md:rounded-br-lg flex items-center justify-center">
