@@ -2,8 +2,10 @@ import axios from "axios";
 import React from "react";
 import Swal from "sweetalert2";
 import Button from "../components/button";
+import CardProvince from "../components/home/CardProvince";
 import Input from "../components/input";
 import AdminLayout from "../components/layout/AdminLayout";
+import Loader from "../components/loader";
 import DashboardImage from "../images/dashboard.svg";
 
 const Home = () => {
@@ -11,6 +13,7 @@ const Home = () => {
     const [maxId, setMaxId] = React.useState(0);
     const [name, setName] = React.useState('');
     const [searchValue, setSearchValue] = React.useState('');
+    const [onHover, setOnHover] = React.useState(false);
 
     const fetchingData = () => {
         axios.get('http://34.101.172.140:3005/api/propinsi/list')
@@ -31,7 +34,7 @@ const Home = () => {
 
     const addNewProvince = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        
+
         axios.post('http://34.101.172.140:3005/api/propinsi/add', {
             id: (maxId + 1).toString(),
             name: name
@@ -58,7 +61,7 @@ const Home = () => {
     return (
         <AdminLayout>
             <div className="">
-                <div className="flex md:flex-row flex-col items-center justify-around rounded-xl bg-purple-300 w-full min-h-[300px]">
+                <div className="flex md:flex-row flex-col items-center justify-around rounded-xl bg-purple-300 w-full min-h-[300px] p-3 md:text-left text-center">
                     <div>
                         <h1 className="text-2xl font-bold">Hello admin</h1>
                         <p>Welcome back, your dashboard is ready!</p>
@@ -88,28 +91,38 @@ const Home = () => {
                 <div className="min-h-[300px]">
                     <p className="mb-5 font-semibold">Cari Provinsi di sini</p>
                     <Input
-                    placeholder="search"
-                    type="text"
-                    onChange={(e) => setSearchValue(e.target.value)}
+                        placeholder="search"
+                        type="text"
+                        onChange={(e) => setSearchValue(e.target.value)}
                     />
                     <p className="font-bold mt-10">Daftar Provinsi</p>
                     {
-                        datas.length !== 0 &&
-                        datas.filter((item: {name: string}) => {
-                            if(item.name.toUpperCase().includes(searchValue.toUpperCase()))
-                                return item
-                            else if(searchValue === '')
-                                return item
-                        }).map((data: { id: string, name: string }, index) => {
-                            return (
-                                <a href={`/province/${data.id}`} key={index}>
-                                    <div className="bg-white rounded-lg shadow p-4 my-2">
-                                        <p className="uppercase font-semibold mb-1 text-lg">{data.name}</p>
-                                        <p className="text-md text-gray-500">click item to view details</p>
-                                    </div>
-                                </a>
+                        datas.length !== 0 ?
+                            datas.filter((item: { name: string }) => {
+                                if (item.name.toUpperCase().includes(searchValue.toUpperCase()))
+                                    return item
+                                else if (searchValue === '')
+                                    return item
+                            }).map((data: { id: string, name: string }, index) => {
+                                return (
+                                    <CardProvince 
+                                    data={data}
+                                    key={index}
+                                    />
+                                )
+                            }) : (
+                                <>
+                                    <Loader />
+                                    <Loader />
+                                    <Loader />
+                                    <Loader />
+                                    <Loader />
+                                    <Loader />
+                                    <Loader />
+                                    <Loader />
+                                    <Loader />
+                                </>
                             )
-                        })
                     }
                 </div>
             </div>
