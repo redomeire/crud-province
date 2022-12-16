@@ -87,7 +87,7 @@ const DataAction = () => {
         <AdminLayout pageName="Edit Province">
             <form>
                 <div className="mb-6">
-                    <label className="block mb-2 text-sm font-medium text-gray-900 ">ID</label>
+                    <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-slate-300">ID</label>
                     <Input
                         type="text"
                         onChange={(e) => setName(e.target.value)}
@@ -98,7 +98,7 @@ const DataAction = () => {
                     />
                 </div>
                 <div className="mb-6">
-                    <label className="block mb-2 text-sm font-medium text-gray-900 ">Province name</label>
+                    <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-slate-300 ">Province name</label>
                     <Input
                         type="text"
                         onChange={(e) => setName(e.target.value)}

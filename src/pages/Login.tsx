@@ -43,9 +43,9 @@ const Login = () => {
     }
 
     return (
-        <div className="w-full min-h-screen bg-gray-200 flex items-center justify-center font-poppins md:p-0 p-10">
+        <div className="w-full min-h-screen bg-gray-200 dark:bg-slate-800 flex items-center justify-center font-poppins md:p-0 p-10">
             <div className="shadow-lg flex md:w-[80%] w-[95%] md:flex-row flex-col-reverse">
-                <div className="md:w-[50%] bg-white p-10 md:rounded-tl-lg md:rounded-bl-lg md:rounded-b-none rounded-b-lg">
+                <div className="md:w-[50%] bg-white dark:bg-slate-700 p-10 md:rounded-tl-lg md:rounded-bl-lg md:rounded-b-none rounded-b-lg dark:text-slate-300">
                     <h1 className="font-bold text-2xl mb-2">Login</h1>
                     <p>Login untuk mengakses dashboard</p>
                     <form onSubmit={handleSubmit} className="mt-10">
@@ -85,7 +85,7 @@ const Login = () => {
                         </div>
                     </form>
                 </div>
-                <div className="md:w-[50%] bg-purple-500 md:p-3 p-4 rounded-tr-lg rounded-tl-lg md:rounded-tl-none md:rounded-br-lg flex items-center justify-center">
+                <div className="md:w-[50%] bg-purple-500 md:p-3 p-4 rounded-tr-lg rounded-tl-lg md:rounded-tl-none md:rounded-br-lg flex items-center justify-center dark:bg-purple-700">
                     <div className="flex flex-col justify-center items-center">
                         <img src={LoginImage} className="md:w-[200px] w-[150px] mb-5" alt=""/>
                         <div className="text-white text-justify w-[80%]">

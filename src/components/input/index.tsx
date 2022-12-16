@@ -33,7 +33,7 @@ const Input = ({
             defaultValue={defaultValue}
             disabled={disabled}
             />
-            <div className={`${endIcon !== undefined ? 'absolute' : 'hidden'} right-0 top-[8px] bg-slate-200 p-2 rounded-tr-lg rounded-br-lg`}>
+            <div className={`${endIcon !== undefined ? 'absolute' : 'hidden'} right-0 top-[8px] bg-slate-200 dark:bg-purple-700 p-2 rounded-tr-lg rounded-br-lg`}>
                 {endIcon}
             </div>
         </div>
