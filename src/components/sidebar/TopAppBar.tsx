@@ -8,7 +8,7 @@ interface Props {
 const TopAppBar = ({isSidebarOpen, setIsSidebarOpen}: Props) => {
 
     return (
-        <div className="fixed top-0 w-full flex items-center p-5 justify-between bg-white shadow-lg z-40">
+        <div className="fixed top-0 w-full flex items-center p-5 justify-between bg- dark:bg-slate-800 shadow-lg z-40">
             <p className='text-2xl font-bold'>CRUD Province</p>
             <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} className='md:hidden block'>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">

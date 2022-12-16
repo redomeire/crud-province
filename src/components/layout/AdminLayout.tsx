@@ -14,7 +14,7 @@ const AdminLayout = ({
     const [isSidebarOpen, setIsSidebarOpen] = React.useState<boolean>(false);
 
     return ( 
-        <div className="font-poppins">
+        <div className="font-poppins dark:bg-slate-600">
             <Sidebar 
             isSidebarOpen={isSidebarOpen} 
             setIsSidebarOpen={setIsSidebarOpen}/>
