@@ -13,7 +13,6 @@ const Home = () => {
     const [maxId, setMaxId] = React.useState(0);
     const [name, setName] = React.useState('');
     const [searchValue, setSearchValue] = React.useState('');
-    const [onHover, setOnHover] = React.useState(false);
 
     const fetchingData = () => {
         axios.get('http://34.101.172.140:3005/api/propinsi/list')
@@ -65,7 +64,7 @@ const Home = () => {
     return (
         <AdminLayout>
             <div className="">
-                <div className="flex md:flex-row flex-col items-center justify-around rounded-xl bg-purple-300 w-full min-h-[300px] p-3 md:text-left text-center">
+                <div className="flex md:flex-row flex-col items-center justify-around rounded-xl bg-purple-300 dark:bg-purple-700 w-full min-h-[300px] p-3 md:text-left text-center">
                     <div>
                         <h1 className="text-2xl font-bold">Hello admin</h1>
                         <p>Welcome back, your dashboard is ready!</p>
@@ -73,10 +72,10 @@ const Home = () => {
                     <img src={DashboardImage} className="w-[300px]" alt="" />
                 </div>
                 <div>
-                    <form onSubmit={addNewProvince} className="border p-3 rounded-lg my-10">
-                        <p className="mb-4 font-bold text-xl">Add province</p>
+                    <form onSubmit={addNewProvince} className="border dark:border-2 p-3 rounded-lg my-10 dark:border-slate-500">
+                        <p className="mb-4 font-bold text-xl dark:text-slate-300">Add province</p>
                         <div className="mb-6">
-                            <label className="block text-sm font-medium text-gray-900 dark:text-white">Province Name</label>
+                            <label className="block text-sm font-medium text-gray-900 dark:text-slate-300">Province Name</label>
                             <Input
                                 onChange={(e) => setName(e.target.value)}
                                 type="text"
@@ -93,13 +92,13 @@ const Home = () => {
                     </form>
                 </div>
                 <div className="min-h-[300px]">
-                    <p className="mb-5 font-semibold">Cari Provinsi di sini</p>
+                    <p className="mb-5 font-semibold dark:text-slate-300">Cari Provinsi di sini</p>
                     <Input
                         placeholder="search"
                         type="text"
                         onChange={(e) => setSearchValue(e.target.value)}
                     />
-                    <p className="font-bold mt-10">Daftar Provinsi</p>
+                    <p className="font-bold mt-10 dark:text-slate-300">Daftar Provinsi</p>
                     {
                         datas.length !== 0 ?
                             datas.filter((item: { name: string }) => {

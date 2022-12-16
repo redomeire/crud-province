@@ -25,7 +25,7 @@ const Input = ({
     return ( 
         <div className="relative">
             <input 
-            className={`${endIcon !== undefined && 'pr-12'} ${disabled && 'cursor-not-allowed bg-gray-100'} focus:placeholder:text-purple-300 placeholder:italic placeholder:text-sm rounded-lg p-2 outline-none ring-1 transition duration-200 ring-gray-300 focus:ring-purple-400 ${className}`}
+            className={`${endIcon !== undefined && 'pr-12'} ${disabled && 'cursor-not-allowed bg-gray-100'} focus:placeholder:text-purple-300 placeholder:italic placeholder:text-sm rounded-lg p-2 outline-none ring-1 transition duration-200 ring-gray-300 focus:ring-purple-400 dark:bg-slate-600 dark:ring-slate-400 dark:text-white ${className}`}
             placeholder={placeholder}
             type={type}
             required={required}

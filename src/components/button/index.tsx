@@ -18,7 +18,7 @@ const Button = ({
         <button
             type={type}
             onClick={onClick}
-            className={`p-3 rounded-lg hover:brightness-95 transition duration-200 ${className}`}>
+            className={`p-3 rounded-lg hover:brightness-95 transition duration-200 ${className} dark:bg-purple-600 dark:text-slate-200`}>
             {children}
         </button>
     );

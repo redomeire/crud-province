@@ -17,6 +17,14 @@ export const ThemeContext = React.createContext({
 function App() {
   const [isDark, setIsDark] = React.useState<boolean>(false);
 
+  React.useEffect(() => {
+    if(window.localStorage.getItem('theme') === 'dark')
+      setIsDark(true);
+
+      else 
+        setIsDark(false);
+  }, [])
+
   return (
     <div className="App">
       <ThemeContext.Provider value={{ isDark, setIsDark }}>
